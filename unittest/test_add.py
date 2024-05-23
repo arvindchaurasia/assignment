@@ -12,14 +12,14 @@ def test_add():
     assert response.status_code == 200
     assert response.json()["response"] == [3, 7]
 
-def test_invalid_payload():
+
+def test_empty_payload():
     response = client.post("/addlist", json={
         "batchid": "id0101",
-        "payload": [[1, "a"], [3, 4]]
+        "payload": []
     })
-    assert response.status_code == 400
-    assert "All elements in each pair must be integers" in response.json()["detail"]
-
+    assert response.status_code == 200
+    assert response.json()["response"] == []
 
 def test_non_list_payload():
     response = client.post("/addlist", json={

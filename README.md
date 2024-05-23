@@ -1,9 +1,11 @@
-# assignment
-## for install all dependencies run below command 
+## Assignment
+### For install all dependencies run below command 
 
-pip3 install -r requirement.txt
+--  pip3 install -r requirement.txt
 
-## for run uvicorn run below command
-uvicorn app.main:app --reload
+### For run uvicorn server run below command
+--  uvicorn app.main:app --reload
 
-## for run unittest 
+### for run unittest run below command
+--  pytest unitest
+   
