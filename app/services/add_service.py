@@ -2,12 +2,9 @@ from multiprocessing import Pool
 from typing import List
 
 def check_number(pair: List[int]) -> int:
-    try:
-        if not all(isinstance(x, int) for x in pair):
-            raise ValueError("Each element must be integer.")
-        return sum(pair)
-    except Exception as e:
-        print(str(e))
+    if not all(isinstance(x, int) for x in pair):
+        raise ValueError("each element must be integer.")
+    return sum(pair)
 
 def addition(payload: List[List[int]]) -> List[int]:
     with Pool() as pool:
